@@ -1,0 +1,201 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #b9b9b9;
+  font-family: Arial, sans-serif;
+}
+
+.page {
+  width: 100%;
+  overflow: hidden;
+}
+
+.topbar,
+.footer {
+  padding: 18px 7vw;
+  color: #c8c8c8;
+  font-size: 11px;
+  letter-spacing: .16em;
+}
+
+.hero {
+  display: flex;
+  min-height: 480px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 70px 7vw;
+  background: #f7f7f7;
+}
+
+.hero-copy {
+  max-width: 560px;
+}
+
+.tiny {
+  color: #c2c2c2;
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 18px 0;
+  color: #aaa;
+  font-size: clamp(40px, 7vw, 82px);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+h2 {
+  color: #b7b7b7;
+  font-size: 30px;
+}
+
+p,
+.note,
+.status-line,
+.links a,
+form {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.hero p {
+  max-width: 430px;
+  color: #c1c1c1;
+}
+
+a {
+  color: #c0c0c0;
+}
+
+.button,
+button {
+  display: inline-block;
+  border: 0;
+  margin-top: 20px;
+  padding: 13px 22px;
+  background: #dedede;
+  color: #fff;
+  font: inherit;
+  text-decoration: none;
+}
+
+.hero-art {
+  width: 42%;
+  min-width: 260px;
+}
+
+.hero-art img {
+  display: block;
+  width: 100%;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 7vw;
+}
+
+.status-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.green {
+  background: #35bd67;
+}
+
+.yellow {
+  background: #e9c52d;
+}
+
+.red {
+  background: #e45b5b;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin: 80px 0;
+}
+
+.links {
+  display: grid;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.feedback {
+  padding: 40px;
+  background: #fafafa;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #eee;
+  padding: 15px;
+  color: #aaa;
+  font: inherit;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-row input {
+  width: auto;
+}
+
+button {
+  width: fit-content;
+  cursor: pointer;
+}
+
+@media (max-width: 680px) {
+  .hero {
+    display: block;
+    padding-top: 45px;
+  }
+
+  .hero-art {
+    width: 80%;
+    margin: 45px auto 0;
+  }
+
+  .split {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    margin: 55px 0;
+  }
+
+  .feedback {
+    padding: 24px;
+  }
+}

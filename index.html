@@ -1,0 +1,80 @@
+<!doctype html>
+<!--
+  THESIS: One plausible page concentrates common accessibility failures instead of explaining them.
+  OWN-WORLD: Washed-out grayscale, pale controls, colored status dots, and soft geometric artwork.
+  STORY: A test operator submits a simple inquiry while an audit tool detects the deliberate failures.
+  FIRST VIEWPORT: Low-contrast copy and call to action sit beside an image with no text alternative.
+  FORM: A sparse static landing page whose status, content, and controls intentionally omit accessible structure.
+-->
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>アクセシビリティ検査テストページ</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="page">
+      <div class="topbar">ACCESS CHECK / SAMPLE 01</div>
+
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="tiny">検査用デモページ</div>
+          <h1>見つけにくい情報を<br>集めました。</h1>
+          <p>このページは、自動アクセシビリティ検査の動作を確認するためのサンプルです。</p>
+          <a class="button" href="#feedback">フィードバックを送る</a>
+        </div>
+        <div class="hero-art">
+          <img src="assets/sample-illustration.svg">
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="tiny">稼働状況（色で表示）</div>
+        <div class="status-line">
+          <span class="status-dot green"></span>
+          <span>公開サイト</span>
+        </div>
+        <div class="status-line">
+          <span class="status-dot yellow"></span>
+          <span>通知サービス</span>
+        </div>
+        <div class="status-line">
+          <span class="status-dot red"></span>
+          <span>管理画面</span>
+        </div>
+
+        <div class="split">
+          <div>
+            <div class="tiny">今日のメモ</div>
+            <div class="note">新しいお知らせはありません。詳しい内容は下のフォームからお問い合わせください。</div>
+          </div>
+          <div>
+            <div class="tiny">参考リンク</div>
+            <div class="links">
+              <a href="#feedback">お問い合わせ</a>
+              <a href="https://www.w3.org/WAI/">ガイドラインを見る</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="feedback" class="feedback">
+          <div class="tiny">CONTACT FORM</div>
+          <h2>お問い合わせ</h2>
+          <form>
+            <input type="text" placeholder="お名前">
+            <input type="email" placeholder="メールアドレス">
+            <textarea placeholder="お問い合わせ内容"></textarea>
+            <div class="form-row">
+              <input type="checkbox">
+              <span>お知らせを受け取る</span>
+            </div>
+            <button type="submit">送信する</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer">© 2026 SAMPLE PROJECT / ACCESSIBILITY TEST FIXTURE</div>
+    </div>
+  </body>
+</html>
