@@ -144,6 +144,74 @@ button {
   background: #fafafa;
 }
 
+.activity,
+.notification-settings {
+  margin: 80px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #b9b9b9;
+  text-align: left;
+}
+
+th,
+td {
+  border-bottom: 1px solid #eee;
+  padding: 14px 10px;
+}
+
+.text-control {
+  width: fit-content;
+  margin-top: 18px;
+  color: #c0c0c0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgb(0 0 0 / 25%);
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal-panel {
+  width: min(460px, 100%);
+  padding: 36px;
+  background: #fff;
+}
+
+.modal-close {
+  width: fit-content;
+  margin-left: auto;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.button-like {
+  width: fit-content;
+  margin-top: 18px;
+  padding: 13px 22px;
+  background: #dedede;
+  color: #fff;
+  cursor: pointer;
+}
+
+.settings-result {
+  min-height: 28px;
+  margin-top: 16px;
+}
+
 form {
   display: grid;
   gap: 14px;

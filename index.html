@@ -2,9 +2,9 @@
 <!--
   THESIS: One plausible page concentrates common accessibility failures instead of explaining them.
   OWN-WORLD: Washed-out grayscale, pale controls, colored status dots, and soft geometric artwork.
-  STORY: A test operator submits a simple inquiry while an audit tool detects the deliberate failures.
+  STORY: A test operator submits a simple inquiry while an audit tool detects deliberate static and interactive failures.
   FIRST VIEWPORT: Low-contrast copy and call to action sit beside an image with no text alternative.
-  FORM: A sparse static landing page whose status, content, and controls intentionally omit accessible structure.
+  FORM: A sparse landing page whose status, content, controls, and scripted interactions intentionally omit accessible structure.
 -->
 <html lang="ja">
   <head>
@@ -58,6 +58,50 @@
           </div>
         </div>
 
+        <div class="activity">
+          <div class="tiny">RECENT ACTIVITY</div>
+          <h2>最近の更新</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>日時</th>
+                <th>対象</th>
+                <th>内容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10月4日 16:20</td>
+                <td>公開サイト</td>
+                <td>定期更新</td>
+              </tr>
+              <tr>
+                <td>10月4日 14:05</td>
+                <td>通知サービス</td>
+                <td>配信設定を変更</td>
+              </tr>
+              <tr class="extra-row" hidden>
+                <td>10月3日 18:40</td>
+                <td>管理画面</td>
+                <td>メンテナンス完了</td>
+              </tr>
+              <tr class="extra-row" hidden>
+                <td>10月3日 09:15</td>
+                <td>公開サイト</td>
+                <td>コンテンツを更新</td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="show-more" class="text-control" role="button" tabindex="0">その他の行を表示する</div>
+        </div>
+
+        <div class="notification-settings">
+          <div class="tiny">NOTIFICATION SETTINGS</div>
+          <h2>通知設定</h2>
+          <p>通知先や配信頻度を変更できます。</p>
+          <button id="open-settings" type="button">設定を開く</button>
+        </div>
+
         <div id="feedback" class="feedback">
           <div class="tiny">CONTACT FORM</div>
           <h2>お問い合わせ</h2>
@@ -76,5 +120,47 @@
 
       <div class="footer">© 2026 SAMPLE PROJECT / ACCESSIBILITY TEST FIXTURE</div>
     </div>
+
+    <div id="settings-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="settings-title" hidden>
+      <div class="modal-panel">
+        <div id="close-settings" class="modal-close">閉じる</div>
+        <h2 id="settings-title">通知設定</h2>
+        <input id="notification-email" type="email" value="sample@example.com">
+        <div id="save-settings" class="button-like">保存する</div>
+        <div id="settings-result" class="settings-result"></div>
+      </div>
+    </div>
+
+    <script>
+      const showMore = document.querySelector("#show-more");
+      const settingsModal = document.querySelector("#settings-modal");
+      const notificationEmail = document.querySelector("#notification-email");
+
+      showMore.addEventListener("click", () => {
+        document.querySelectorAll(".extra-row").forEach((row) => {
+          row.hidden = false;
+        });
+        showMore.hidden = true;
+      });
+
+      document.querySelector("#open-settings").addEventListener("click", () => {
+        settingsModal.hidden = false;
+        notificationEmail.focus();
+      });
+
+      document.querySelector("#close-settings").addEventListener("click", () => {
+        settingsModal.hidden = true;
+      });
+
+      document.querySelector("#save-settings").addEventListener("click", () => {
+        document.querySelector("#settings-result").textContent = "設定を保存しました";
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (!settingsModal.hidden && event.key === "Tab") {
+          event.preventDefault();
+        }
+      });
+    </script>
   </body>
 </html>
